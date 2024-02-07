@@ -3,6 +3,7 @@ const cors = require("cors")
 const {connection} = require("./config/db")
 const { userRouter } = require("./route/user.route")
 const { phoneRouter } = require("./route/phones.routes")
+const { addressRouter } = require("./route/address.route")
 require("dotenv").config()
 
 
@@ -11,6 +12,7 @@ app.use(express.json())
 app.use(cors())
 app.use("",userRouter)
 app.use("",phoneRouter)
+app.use("",addressRouter)
 
 app.get("/",(req,res)=>{
     res.send("HOME PAGE")
